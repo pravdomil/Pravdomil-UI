@@ -73,10 +73,7 @@ baseFunctions =
         inputAttr =
             "(spacing A.inputSpacing :: padding A.inputPadding :: bgColor A.inputBgColor :: fontColor A.inputColor :: borderColor A.inputBorderColor :: borderWidth A.inputBorderWidth :: borderRounded A.inputBorderRounded :: a)"
     in
-    [ "rem a = round (A.rootEm * a)"
-    , "rem_ a = A.rootEm * a"
-    , ""
-    , "layout a = Element.layout " ++ layoutAttr
+    [ "layout a = Element.layout " ++ layoutAttr
     , "layoutWith opt a = Element.layoutWith opt " ++ layoutAttr
     , ""
     , "p a = Element.paragraph (spacing A.baseLineSpacing :: a)"
