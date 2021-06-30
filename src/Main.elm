@@ -62,7 +62,7 @@ baseFunctions =
     let
         layoutAttr : String
         layoutAttr =
-            "(bgColor A.baseBgColor :: fontColor A.baseFontColor :: fontSize A.baseFontSize :: A.baseFontFamily :: a)"
+            "(bgColor A.baseBgColor :: fontColor A.baseColor :: fontSize A.baseFontSize :: A.baseFontFamily :: a)"
     in
     [ "rem a = round (A.rootEm * a)"
     , "rem_ a = A.rootEm * a"
