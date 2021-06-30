@@ -110,6 +110,8 @@ baseFunctions =
     , "inputMultiline a = Input.multiline " ++ inputAttr
     , "inputSearch a = Input.search " ++ inputAttr
     , ""
+    , "inputPlaceholder a = Input.placeholder (fontColor A.placeholderColor :: fontSize A.placeholderFontSize :: a)"
+    , ""
     , "--"
     , ""
     ]
@@ -176,6 +178,7 @@ valueToString module_ a =
             , ( "Input", "text" )
             , ( "Input", "multiline" )
             , ( "Input", "search" )
+            , ( "Input", "placeholder" )
             ]
     in
     if List.member ( module_.name, a.name ) ignored then
