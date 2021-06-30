@@ -69,10 +69,10 @@ modulesToString a =
             , "h5 a = p (Region.heading 5 :: fontSize A.h5FontSize :: a)"
             , "h6 a = p (Region.heading 6 :: fontSize A.h6FontSize :: a)"
             , ""
-            , "br = Element.html (Html.br [] [])" -- https://github.com/mdgriffith/elm-ui/issues/276
+            , "br = html (Html.br [] [])" -- https://github.com/mdgriffith/elm-ui/issues/276
             , "hr = el [ width fill, paddingXY 0 (rem 1) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.hrBorderColor ] none)"
             , ""
-            , "noneAttribute = Element.htmlAttribute (Html.Attributes.classList [])"
+            , "noneAttribute = htmlAttribute (Html.Attributes.classList [])"
             , "--"
             , ""
             ]
