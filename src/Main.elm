@@ -51,7 +51,7 @@ modulesToString a =
             [ "rem a = round (A.rootEm * a)"
             , "rem_ a = A.rootEm * a"
             , "p a = Element.paragraph (spacing A.baseLineSpacing :: a)"
-            , "textColumn a = Element.textColumn (width fill :: spacing A.baseLineSpacing :: a)" -- https://github.com/mdgriffith/elm-ui/issues/286
+            , "textColumn a = Element.textColumn (spacing A.baseLineSpacing :: width fill :: a)" -- https://github.com/mdgriffith/elm-ui/issues/286
             , "--"
             , ""
             ]
