@@ -51,6 +51,7 @@ modulesToString a =
             [ "rem a = round (A.rem * a)"
             , "rem_ a = A.rem * a"
             , "p a = Element.paragraph (spacing A.baseLineSpacing :: a)"
+            , "textColumn a = Element.textColumn (width fill :: spacing A.baseLineSpacing :: a)" -- https://github.com/mdgriffith/elm-ui/issues/286
             , "--"
             , ""
             ]
@@ -81,7 +82,7 @@ moduleToString a =
 
 valueToString : Docs.Module -> Docs.Value -> Maybe String
 valueToString module_ a =
-    if a.name == "paragraph" then
+    if a.name == "paragraph" || a.name == "textColumn" then
         Nothing
 
     else if a.name == "roundEach" then
