@@ -37,6 +37,7 @@ modulesToString a =
                 ++ [ "module Ui.Base exposing (..)"
                    , ""
                    , "import Ui.Style as A"
+                   , "import Html.Attributes"
                    ]
                 ++ (a |> List.map (\v -> "import " ++ v.name))
                 ++ [ ""
