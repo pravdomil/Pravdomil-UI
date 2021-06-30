@@ -68,6 +68,10 @@ baseFunctions =
         labelAttr : String
         labelAttr =
             "(fontColor A.labelColor :: fontSize A.labelFontSize :: a)"
+
+        inputAttr : String
+        inputAttr =
+            "(spacing A.inputSpacing :: padding A.inputPadding :: bgColor A.inputBgColor :: borderColor A.inputBorderColor :: borderWidth A.inputBorderWidth :: borderRounded A.inputBorderRound :: a)"
     in
     [ "rem a = round (A.rootEm * a)"
     , "rem_ a = A.rootEm * a"
@@ -101,6 +105,8 @@ baseFunctions =
     , "labelRight a = Input.labelRight " ++ labelAttr
     , "labelAbove a = Input.labelAbove " ++ labelAttr
     , "labelBelow a = Input.labelBelow " ++ labelAttr
+    , ""
+    , "inputText a = Input.text " ++ inputAttr
     , ""
     , "--"
     , ""
@@ -165,6 +171,7 @@ valueToString module_ a =
             , ( "Input", "labelRight" )
             , ( "Input", "labelAbove" )
             , ( "Input", "labelBelow" )
+            , ( "Input", "text" )
             ]
     in
     if List.member ( module_.name, a.name ) ignored then
