@@ -71,6 +71,8 @@ modulesToString a =
             , ""
             , "br = Element.html (Html.br [] [])" -- https://github.com/mdgriffith/elm-ui/issues/276
             , "hr = el [ width fill, paddingXY 0 (rem 1) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.hrBorderColor ] none)"
+            , ""
+            , "noneAttribute = Element.htmlAttribute (Html.Attributes.classList [])"
             , "--"
             , ""
             ]
