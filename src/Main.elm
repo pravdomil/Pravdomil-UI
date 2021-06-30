@@ -62,6 +62,13 @@ modulesToString a =
             , "p a = Element.paragraph (spacing A.baseLineSpacing :: a)"
             , "textColumn a = Element.textColumn (spacing A.baseLineSpacing :: width fill :: a)" -- https://github.com/mdgriffith/elm-ui/issues/286
             , ""
+            , "h1 a = p (Region.heading 1 :: fontSize A.h1FontSize :: a)"
+            , "h2 a = p (Region.heading 2 :: fontSize A.h2FontSize :: a)"
+            , "h3 a = p (Region.heading 3 :: fontSize A.h3FontSize :: a)"
+            , "h4 a = p (Region.heading 4 :: fontSize A.h4FontSize :: a)"
+            , "h5 a = p (Region.heading 5 :: fontSize A.h5FontSize :: a)"
+            , "h6 a = p (Region.heading 6 :: fontSize A.h6FontSize :: a)"
+            , ""
             , "--"
             , ""
             ]
