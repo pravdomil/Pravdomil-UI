@@ -43,47 +43,48 @@ modulesToString a =
                 ++ [ ""
                    , ""
                    ]
-                ++ base
+                ++ baseFunctions
             )
                 |> String.join "\n"
-
-        base : List String
-        base =
-            let
-                layoutAttr : String
-                layoutAttr =
-                    "(bgColor A.baseBgColor :: fontColor A.baseFontColor :: fontSize A.baseFontSize :: A.baseFontFamily :: a)"
-            in
-            [ "rem a = round (A.rootEm * a)"
-            , "rem_ a = A.rootEm * a"
-            , ""
-            , "layout a = Element.layout " ++ layoutAttr
-            , "layoutWith opt a = Element.layoutWith opt " ++ layoutAttr
-            , ""
-            , "p a = Element.paragraph (spacing A.baseLineSpacing :: a)"
-            , "textColumn a = Element.textColumn (spacing A.baseLineSpacing :: width fill :: a)" -- https://github.com/mdgriffith/elm-ui/issues/286
-            , ""
-            , "h1 a = p (Region.heading 1 :: fontSize A.h1FontSize :: a)"
-            , "h2 a = p (Region.heading 2 :: fontSize A.h2FontSize :: a)"
-            , "h3 a = p (Region.heading 3 :: fontSize A.h3FontSize :: a)"
-            , "h4 a = p (Region.heading 4 :: fontSize A.h4FontSize :: a)"
-            , "h5 a = p (Region.heading 5 :: fontSize A.h5FontSize :: a)"
-            , "h6 a = p (Region.heading 6 :: fontSize A.h6FontSize :: a)"
-            , ""
-            , "br = html (Html.br [] [])" -- https://github.com/mdgriffith/elm-ui/issues/276
-            , "hr = el [ width fill, paddingXY 0 (rem 1) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.hrBorderColor ] none)"
-            , ""
-            , "id a = htmlAttribute (Html.Attributes.id a)" -- https://github.com/mdgriffith/elm-ui/issues/319
-            , "noneAttribute = htmlAttribute (Html.Attributes.classList [])"
-            , ""
-            , "--"
-            , ""
-            ]
     in
     a
         |> List.map moduleToString
         |> String.join "\n\n--\n\n"
         |> (++) header
+
+
+baseFunctions : List String
+baseFunctions =
+    let
+        layoutAttr : String
+        layoutAttr =
+            "(bgColor A.baseBgColor :: fontColor A.baseFontColor :: fontSize A.baseFontSize :: A.baseFontFamily :: a)"
+    in
+    [ "rem a = round (A.rootEm * a)"
+    , "rem_ a = A.rootEm * a"
+    , ""
+    , "layout a = Element.layout " ++ layoutAttr
+    , "layoutWith opt a = Element.layoutWith opt " ++ layoutAttr
+    , ""
+    , "p a = Element.paragraph (spacing A.baseLineSpacing :: a)"
+    , "textColumn a = Element.textColumn (spacing A.baseLineSpacing :: width fill :: a)" -- https://github.com/mdgriffith/elm-ui/issues/286
+    , ""
+    , "h1 a = p (Region.heading 1 :: fontSize A.h1FontSize :: a)"
+    , "h2 a = p (Region.heading 2 :: fontSize A.h2FontSize :: a)"
+    , "h3 a = p (Region.heading 3 :: fontSize A.h3FontSize :: a)"
+    , "h4 a = p (Region.heading 4 :: fontSize A.h4FontSize :: a)"
+    , "h5 a = p (Region.heading 5 :: fontSize A.h5FontSize :: a)"
+    , "h6 a = p (Region.heading 6 :: fontSize A.h6FontSize :: a)"
+    , ""
+    , "br = html (Html.br [] [])" -- https://github.com/mdgriffith/elm-ui/issues/276
+    , "hr = el [ width fill, paddingXY 0 (rem 1) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.hrBorderColor ] none)"
+    , ""
+    , "id a = htmlAttribute (Html.Attributes.id a)" -- https://github.com/mdgriffith/elm-ui/issues/319
+    , "noneAttribute = htmlAttribute (Html.Attributes.classList [])"
+    , ""
+    , "--"
+    , ""
+    ]
 
 
 
