@@ -33,15 +33,26 @@ modulesToString a =
     let
         header : String
         header =
-            []
+            ([]
                 ++ [ "module Ui.Base exposing (..)"
                    , ""
+                   , "import Ui.Style as S"
                    ]
                 ++ (a |> List.map (\v -> "import " ++ v.name))
                 ++ [ ""
                    , ""
                    ]
+                ++ base
+            )
                 |> String.join "\n"
+
+        base : List String
+        base =
+            [ "rem a = round (S.rem * a)"
+            , "rem_ a = S.rem * a"
+            , "--"
+            , ""
+            ]
     in
     a
         |> List.map moduleToString
