@@ -64,6 +64,10 @@ baseFunctions =
         layoutAttr : String
         layoutAttr =
             "(bgColor A.baseBgColor :: fontColor A.baseColor :: fontSize A.baseFontSize :: A.baseFontFamily :: a)"
+
+        labelAttr : String
+        labelAttr =
+            "(fontColor A.labelColor :: fontSize A.labelFontSize :: a)"
     in
     [ "rem a = round (A.rootEm * a)"
     , "rem_ a = A.rootEm * a"
@@ -92,6 +96,11 @@ baseFunctions =
     , ""
     , "id a = htmlAttribute (Html.Attributes.id a)" -- https://github.com/mdgriffith/elm-ui/issues/319
     , "noneAttribute = htmlAttribute (Html.Attributes.classList [])"
+    , ""
+    , "labelLeft a = Input.labelLeft " ++ labelAttr
+    , "labelRight a = Input.labelRight " ++ labelAttr
+    , "labelAbove a = Input.labelAbove " ++ labelAttr
+    , "labelBelow a = Input.labelBelow " ++ labelAttr
     , ""
     , "--"
     , ""
@@ -152,6 +161,10 @@ valueToString module_ a =
             , "newTabLink"
             , "download"
             , "downloadAs"
+            , "labelLeft"
+            , "labelRight"
+            , "labelAbove"
+            , "labelBelow"
             ]
     in
     if List.member a.name ignored then
