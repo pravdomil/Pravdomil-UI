@@ -34,7 +34,7 @@ modulesToString a =
         header : String
         header =
             []
-                ++ [ "module Ui exposing (..)"
+                ++ [ "module Ui.Base exposing (..)"
                    , ""
                    ]
                 ++ (a |> List.map (\v -> "import " ++ v.name))
