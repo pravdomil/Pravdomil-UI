@@ -36,7 +36,7 @@ modulesToString a =
             ([]
                 ++ [ "module Ui.Base exposing (..)"
                    , ""
-                   , "import Ui.Style as S"
+                   , "import Ui.Style as A"
                    ]
                 ++ (a |> List.map (\v -> "import " ++ v.name))
                 ++ [ ""
@@ -48,9 +48,9 @@ modulesToString a =
 
         base : List String
         base =
-            [ "rem a = round (S.rem * a)"
-            , "rem_ a = S.rem * a"
-            , "p a = Element.paragraph (spacing S.baseLineSpacing :: a)"
+            [ "rem a = round (A.rem * a)"
+            , "rem_ a = A.rem * a"
+            , "p a = Element.paragraph (spacing A.baseLineSpacing :: a)"
             , "--"
             , ""
             ]
