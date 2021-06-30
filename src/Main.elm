@@ -72,22 +72,22 @@ moduleToString a =
 
         v ->
             v ++ [ "" ]
-    , List.map (valueToString a) a.values
+    , List.filterMap (valueToString a) a.values
     ]
         |> List.concat
         |> String.join "\n"
 
 
-valueToString : Docs.Module -> Docs.Value -> String
+valueToString : Docs.Module -> Docs.Value -> Maybe String
 valueToString module_ a =
     if a.name == "roundEach" then
-        toName module_.name a.name ++ " topLeft topRight bottomLeft bottomRight = " ++ module_.name ++ "." ++ a.name ++ " { topLeft = topLeft, topRight = topRight, bottomLeft = bottomLeft, bottomRight = bottomRight }"
+        Just (toName module_.name a.name ++ " topLeft topRight bottomLeft bottomRight = " ++ module_.name ++ "." ++ a.name ++ " { topLeft = topLeft, topRight = topRight, bottomLeft = bottomLeft, bottomRight = bottomRight }")
 
     else if String.endsWith "Each" a.name then
-        toName module_.name a.name ++ " minX maxX minY maxY = " ++ module_.name ++ "." ++ a.name ++ " { left = minX, right = maxX, top = minY, bottom = maxY }"
+        Just (toName module_.name a.name ++ " minX maxX minY maxY = " ++ module_.name ++ "." ++ a.name ++ " { left = minX, right = maxX, top = minY, bottom = maxY }")
 
     else
-        toName module_.name a.name ++ " = " ++ module_.name ++ "." ++ a.name
+        Just (toName module_.name a.name ++ " = " ++ module_.name ++ "." ++ a.name)
 
 
 aliasToString : Docs.Module -> Docs.Alias -> String
