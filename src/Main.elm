@@ -44,6 +44,10 @@ modulesToString a =
                    , ""
                    ]
                 ++ baseFunctions
+                ++ [ ""
+                   , "--"
+                   , ""
+                   ]
             )
                 |> String.join "\n"
     in
@@ -81,9 +85,6 @@ baseFunctions =
     , ""
     , "id a = htmlAttribute (Html.Attributes.id a)" -- https://github.com/mdgriffith/elm-ui/issues/319
     , "noneAttribute = htmlAttribute (Html.Attributes.classList [])"
-    , ""
-    , "--"
-    , ""
     ]
 
 
