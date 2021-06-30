@@ -50,8 +50,10 @@ modulesToString a =
         base =
             [ "rem a = round (A.rootEm * a)"
             , "rem_ a = A.rootEm * a"
+            , ""
             , "p a = Element.paragraph (spacing A.baseLineSpacing :: a)"
             , "textColumn a = Element.textColumn (spacing A.baseLineSpacing :: width fill :: a)" -- https://github.com/mdgriffith/elm-ui/issues/286
+            , ""
             , "--"
             , ""
             ]
