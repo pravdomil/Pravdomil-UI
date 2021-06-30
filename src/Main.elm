@@ -107,6 +107,7 @@ baseFunctions =
     , "labelBelow a = Input.labelBelow " ++ labelAttr
     , ""
     , "inputText a = Input.text " ++ inputAttr
+    , "inputMultiline a = Input.multiline " ++ inputAttr
     , ""
     , "--"
     , ""
@@ -172,6 +173,7 @@ valueToString module_ a =
             , ( "Input", "labelAbove" )
             , ( "Input", "labelBelow" )
             , ( "Input", "text" )
+            , ( "Input", "multiline" )
             ]
     in
     if List.member ( module_.name, a.name ) ignored then
