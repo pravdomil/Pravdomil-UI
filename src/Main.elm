@@ -48,8 +48,16 @@ modulesToString a =
 
         base : List String
         base =
+            let
+                layoutAttr : String
+                layoutAttr =
+                    "(bgColor A.baseBgColor :: fontColor A.baseFontColor :: fontSize A.baseFontSize :: A.baseFontFamily :: a)"
+            in
             [ "rem a = round (A.rootEm * a)"
             , "rem_ a = A.rootEm * a"
+            , ""
+            , "layout a = Element.layout " ++ layoutAttr
+            , "layoutWith opt a = Element.layoutWith opt " ++ layoutAttr
             , ""
             , "p a = Element.paragraph (spacing A.baseLineSpacing :: a)"
             , "textColumn a = Element.textColumn (spacing A.baseLineSpacing :: width fill :: a)" -- https://github.com/mdgriffith/elm-ui/issues/286
@@ -87,7 +95,9 @@ valueToString module_ a =
     let
         ignored : List String
         ignored =
-            [ "paragraph"
+            [ "layout"
+            , "layoutWith"
+            , "paragraph"
             , "textColumn"
             ]
     in
