@@ -108,6 +108,7 @@ baseFunctions =
     , ""
     , "inputText a = Input.text " ++ inputAttr
     , "inputMultiline a = Input.multiline " ++ inputAttr
+    , "inputSearch a = Input.search " ++ inputAttr
     , ""
     , "--"
     , ""
@@ -174,6 +175,7 @@ valueToString module_ a =
             , ( "Input", "labelBelow" )
             , ( "Input", "text" )
             , ( "Input", "multiline" )
+            , ( "Input", "search" )
             ]
     in
     if List.member ( module_.name, a.name ) ignored then
