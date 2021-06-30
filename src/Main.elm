@@ -71,7 +71,7 @@ baseFunctions =
 
         inputAttr : String
         inputAttr =
-            "(spacing A.inputSpacing :: padding A.inputPadding :: bgColor A.inputBgColor :: borderColor A.inputBorderColor :: borderWidth A.inputBorderWidth :: borderRounded A.inputBorderRound :: a)"
+            "(spacing A.inputSpacing :: padding A.inputPadding :: bgColor A.inputBgColor :: borderColor A.inputBorderColor :: borderWidth A.inputBorderWidth :: borderRounded A.inputBorderRounded :: a)"
     in
     [ "rem a = round (A.rootEm * a)"
     , "rem_ a = A.rootEm * a"
