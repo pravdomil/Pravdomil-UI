@@ -69,6 +69,7 @@ modulesToString a =
             , "h5 a = p (Region.heading 5 :: fontSize A.h5FontSize :: a)"
             , "h6 a = p (Region.heading 6 :: fontSize A.h6FontSize :: a)"
             , ""
+            , "br = Element.html (Html.br [] [])" -- https://github.com/mdgriffith/elm-ui/issues/276
             , "--"
             , ""
             ]
