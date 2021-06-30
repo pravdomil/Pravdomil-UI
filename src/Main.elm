@@ -87,16 +87,38 @@ baseFunctions =
     , "h5 a = p (Region.heading 5 :: fontSize A.h5FontSize :: a)"
     , "h6 a = p (Region.heading 6 :: fontSize A.h6FontSize :: a)"
     , ""
-    , "shadow1 = A.shadow1"
-    , "shadow2 = A.shadow2"
-    , "shadow3 = A.shadow3"
-    , ""
     , "br = html (Html.br [] [])" -- https://github.com/mdgriffith/elm-ui/issues/276
     , "hr = el [ width fill, paddingXY 0 (rem 1) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.hrBorderColor ] none)"
     , ""
     , "id a = htmlAttribute (Html.Attributes.id a)" -- https://github.com/mdgriffith/elm-ui/issues/319
     , "noneAttribute = htmlAttribute (Html.Attributes.classList [])"
+    , ""
+    , "--"
+    , ""
     ]
+        ++ ([ "shadow1"
+            , "shadow2"
+            , "shadow3"
+            , "grey0"
+            , "grey1"
+            , "grey2"
+            , "grey3"
+            , "grey4"
+            , "grey5"
+            , "grey6"
+            , "grey7"
+            , "grey8"
+            , "grey9"
+            , "grey10"
+            , "primary"
+            , "secondary"
+            , "success"
+            , "info"
+            , "warning"
+            , "danger"
+            ]
+                |> List.map (\v -> v ++ " = A." ++ v)
+           )
 
 
 
