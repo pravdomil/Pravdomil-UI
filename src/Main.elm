@@ -101,16 +101,16 @@ baseFunctions =
     , "id a = htmlAttribute (Html.Attributes.id a)" -- https://github.com/mdgriffith/elm-ui/issues/319
     , "noneAttribute = htmlAttribute (Html.Attributes.classList [])"
     , ""
-    , "labelLeft a = Input.labelLeft " ++ labelAttr
-    , "labelRight a = Input.labelRight " ++ labelAttr
-    , "labelAbove a = Input.labelAbove " ++ labelAttr
-    , "labelBelow a = Input.labelBelow " ++ labelAttr
+    , "labelLeft a = Element.Input.labelLeft " ++ labelAttr
+    , "labelRight a = Element.Input.labelRight " ++ labelAttr
+    , "labelAbove a = Element.Input.labelAbove " ++ labelAttr
+    , "labelBelow a = Element.Input.labelBelow " ++ labelAttr
     , ""
-    , "inputText a = Input.text " ++ inputAttr
-    , "inputMultiline a = Input.multiline " ++ inputAttr
-    , "inputSearch a = Input.search " ++ inputAttr
+    , "inputText a = Element.Input.text " ++ inputAttr
+    , "inputMultiline a = Element.Input.multiline " ++ inputAttr
+    , "inputSearch a = Element.Input.search " ++ inputAttr
     , ""
-    , "inputPlaceholder a = Input.placeholder (fontColor A.placeholderColor :: fontSize A.placeholderFontSize :: a)"
+    , "inputPlaceholder a = Element.Input.placeholder (fontColor A.placeholderColor :: fontSize A.placeholderFontSize :: a)"
     , ""
     , "--"
     , ""
@@ -171,14 +171,14 @@ valueToString module_ a =
             , ( "Element", "newTabLink" )
             , ( "Element", "download" )
             , ( "Element", "downloadAs" )
-            , ( "Input", "labelLeft" )
-            , ( "Input", "labelRight" )
-            , ( "Input", "labelAbove" )
-            , ( "Input", "labelBelow" )
-            , ( "Input", "text" )
-            , ( "Input", "multiline" )
-            , ( "Input", "search" )
-            , ( "Input", "placeholder" )
+            , ( "Element.Input", "labelLeft" )
+            , ( "Element.Input", "labelRight" )
+            , ( "Element.Input", "labelAbove" )
+            , ( "Element.Input", "labelBelow" )
+            , ( "Element.Input", "text" )
+            , ( "Element.Input", "multiline" )
+            , ( "Element.Input", "search" )
+            , ( "Element.Input", "placeholder" )
             ]
     in
     if List.member ( module_.name, a.name ) ignored then
