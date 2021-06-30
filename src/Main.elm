@@ -112,7 +112,9 @@ baseFunctions =
     , "--"
     , ""
     ]
-        ++ ([ "shadow1"
+        ++ ([ "baseFontFamily"
+            , "monospaceFontFamily"
+            , "shadow1"
             , "shadow2"
             , "shadow3"
             , "grey0"
