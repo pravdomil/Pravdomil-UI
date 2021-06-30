@@ -81,10 +81,10 @@ moduleToString a =
 valueToString : Docs.Module -> Docs.Value -> String
 valueToString module_ a =
     if a.name == "roundEach" then
-        toName module_.name a.name ++ " topLeft topRight bottomLeft bottomRight =\n  " ++ module_.name ++ "." ++ a.name ++ " { topLeft = topLeft, topRight = topRight, bottomLeft = bottomLeft, bottomRight = bottomRight }"
+        toName module_.name a.name ++ " topLeft topRight bottomLeft bottomRight = " ++ module_.name ++ "." ++ a.name ++ " { topLeft = topLeft, topRight = topRight, bottomLeft = bottomLeft, bottomRight = bottomRight }"
 
     else if String.endsWith "Each" a.name then
-        toName module_.name a.name ++ " minX maxX minY maxY =\n  " ++ module_.name ++ "." ++ a.name ++ " { left = minX, right = maxX, top = minY, bottom = maxY }"
+        toName module_.name a.name ++ " minX maxX minY maxY = " ++ module_.name ++ "." ++ a.name ++ " { left = minX, right = maxX, top = minY, bottom = maxY }"
 
     else
         toName module_.name a.name ++ " = " ++ module_.name ++ "." ++ a.name
