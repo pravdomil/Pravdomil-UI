@@ -73,6 +73,11 @@ baseFunctions =
     , "p a = Element.paragraph (spacing A.baseLineSpacing :: a)"
     , "textColumn a = Element.textColumn (spacing A.baseLineSpacing :: width fill :: a)" -- https://github.com/mdgriffith/elm-ui/issues/286
     , ""
+    , "link a = Element.link (fontColor A.linkColor :: a)"
+    , "newTabLink a = Element.newTabLink (fontColor A.linkColor :: a)"
+    , "download a = Element.download (fontColor A.linkColor :: a)"
+    , "downloadAs a = Element.downloadAs (fontColor A.linkColor :: a)"
+    , ""
     , "h1 a = p (Region.heading 1 :: fontSize A.h1FontSize :: a)"
     , "h2 a = p (Region.heading 2 :: fontSize A.h2FontSize :: a)"
     , "h3 a = p (Region.heading 3 :: fontSize A.h3FontSize :: a)"
@@ -115,6 +120,10 @@ valueToString module_ a =
             , "layoutWith"
             , "paragraph"
             , "textColumn"
+            , "link"
+            , "newTabLink"
+            , "download"
+            , "downloadAs"
             ]
     in
     if List.member a.name ignored then
