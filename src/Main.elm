@@ -151,23 +151,23 @@ moduleToString a =
 valueToString : Docs.Module -> Docs.Value -> Maybe String
 valueToString module_ a =
     let
-        ignored : List String
+        ignored : List ( String, String )
         ignored =
-            [ "layout"
-            , "layoutWith"
-            , "paragraph"
-            , "textColumn"
-            , "link"
-            , "newTabLink"
-            , "download"
-            , "downloadAs"
-            , "labelLeft"
-            , "labelRight"
-            , "labelAbove"
-            , "labelBelow"
+            [ ( "Element", "layout" )
+            , ( "Element", "layoutWith" )
+            , ( "Element", "paragraph" )
+            , ( "Element", "textColumn" )
+            , ( "Element", "link" )
+            , ( "Element", "newTabLink" )
+            , ( "Element", "download" )
+            , ( "Element", "downloadAs" )
+            , ( "Input", "labelLeft" )
+            , ( "Input", "labelRight" )
+            , ( "Input", "labelAbove" )
+            , ( "Input", "labelBelow" )
             ]
     in
-    if List.member a.name ignored then
+    if List.member ( module_.name, a.name ) ignored then
         Nothing
 
     else if a.name == "roundEach" then
