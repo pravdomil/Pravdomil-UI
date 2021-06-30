@@ -42,20 +42,15 @@ modulesToString a =
                    ]
                 ++ (a |> List.map (\v -> "import " ++ v.name))
                 ++ [ ""
-                   , ""
                    ]
                 ++ baseFunctions
-                ++ [ ""
-                   , "--"
-                   , ""
-                   ]
             )
                 |> String.join "\n"
     in
     a
         |> List.map moduleToString
+        |> (::) header
         |> String.join "\n\n--\n\n"
-        |> (++) header
 
 
 baseFunctions : List String
