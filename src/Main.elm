@@ -50,6 +50,7 @@ modulesToString a =
         base =
             [ "rem a = round (S.rem * a)"
             , "rem_ a = S.rem * a"
+            , "p a = Element.paragraph (spacing S.baseLineSpacing :: a)"
             , "--"
             , ""
             ]
@@ -80,7 +81,10 @@ moduleToString a =
 
 valueToString : Docs.Module -> Docs.Value -> Maybe String
 valueToString module_ a =
-    if a.name == "roundEach" then
+    if a.name == "paragraph" then
+        Nothing
+
+    else if a.name == "roundEach" then
         Just (toName module_.name a.name ++ " topLeft topRight bottomLeft bottomRight = " ++ module_.name ++ "." ++ a.name ++ " { topLeft = topLeft, topRight = topRight, bottomLeft = bottomLeft, bottomRight = bottomRight }")
 
     else if String.endsWith "Each" a.name then
