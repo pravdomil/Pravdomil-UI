@@ -84,7 +84,14 @@ moduleToString a =
 
 valueToString : Docs.Module -> Docs.Value -> Maybe String
 valueToString module_ a =
-    if a.name == "paragraph" || a.name == "textColumn" then
+    let
+        ignored : List String
+        ignored =
+            [ "paragraph"
+            , "textColumn"
+            ]
+    in
+    if List.member a.name ignored then
         Nothing
 
     else if a.name == "roundEach" then
