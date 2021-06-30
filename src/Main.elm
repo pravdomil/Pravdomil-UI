@@ -70,6 +70,7 @@ modulesToString a =
             , "h6 a = p (Region.heading 6 :: fontSize A.h6FontSize :: a)"
             , ""
             , "br = Element.html (Html.br [] [])" -- https://github.com/mdgriffith/elm-ui/issues/276
+            , "hr = el [ width fill, paddingXY 0 (rem 1) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.hrBorderColor ] none)"
             , "--"
             , ""
             ]
