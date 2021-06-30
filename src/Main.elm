@@ -75,6 +75,7 @@ baseFunctions =
     , "textColumn a = Element.textColumn (spacing A.baseLineSpacing :: width fill :: a)" -- https://github.com/mdgriffith/elm-ui/issues/286
     , ""
     , "link a = Element.link (fontColor A.linkColor :: a)"
+    , "link_ a = Element.button (fontColor A.linkColor :: focused [ borderColor (rgba 0 0 0 1) ] :: a)"
     , "newTabLink a = Element.newTabLink (fontColor A.linkColor :: a)"
     , "download a = Element.download (fontColor A.linkColor :: a)"
     , "downloadAs a = Element.downloadAs (fontColor A.linkColor :: a)"
