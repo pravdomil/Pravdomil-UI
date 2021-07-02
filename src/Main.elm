@@ -93,6 +93,8 @@ baseFunctions =
     , "id a = htmlAttribute (Html.Attributes.id a)" -- https://github.com/mdgriffith/elm-ui/issues/319
     , "noneAttribute = htmlAttribute (Html.Attributes.classList [])"
     , ""
+    , "button a = Element.Input.button (spacing A.buttonSpacing :: padding A.buttonPadding :: bgColor A.buttonBgColor :: fontColor A.buttonColor :: borderRounded A.buttonBorderRounded :: a)"
+    , ""
     , "labelLeft a = Element.Input.labelLeft " ++ labelAttr
     , "labelRight a = Element.Input.labelRight " ++ labelAttr
     , "labelAbove a = Element.Input.labelAbove " ++ labelAttr
@@ -167,6 +169,7 @@ valueToString module_ a =
             , ( "Element", "newTabLink" )
             , ( "Element", "download" )
             , ( "Element", "downloadAs" )
+            , ( "Element.Input", "button" )
             , ( "Element.Input", "labelLeft" )
             , ( "Element.Input", "labelRight" )
             , ( "Element.Input", "labelAbove" )
