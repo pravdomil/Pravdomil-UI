@@ -9,12 +9,14 @@ import Task exposing (Task)
 
 main : Program () () ()
 main =
-    case uiModule of
+    (case uiModule of
         Ok b ->
-            JavaScript.cli (Task.succeed b)
+            Task.succeed b
 
         Err b ->
-            JavaScript.cli (Task.fail (Decode.errorToString b))
+            Task.fail (Decode.errorToString b)
+    )
+        |> JavaScript.cli
 
 
 
