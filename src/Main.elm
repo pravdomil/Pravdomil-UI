@@ -1,7 +1,6 @@
 module Main exposing (..)
 
 import Elm.Docs as Docs
-import ElmUi
 import Interop.JavaScript as JavaScript
 import Json.Decode as Decode
 import Task exposing (Task)
@@ -9,23 +8,24 @@ import Task exposing (Task)
 
 main : Program () () ()
 main =
-    (case uiModule of
-        Ok b ->
-            Task.succeed b
+    JavaScript.cli
+        (\v ->
+            case uiModuleFromDocs v.stdin of
+                Ok b ->
+                    Task.succeed b
 
-        Err b ->
-            Task.fail (Decode.errorToString b)
-    )
-        |> JavaScript.cli
+                Err b ->
+                    Task.fail (Decode.errorToString b)
+        )
 
 
 
 --
 
 
-uiModule : Result Decode.Error String
-uiModule =
-    ElmUi.docs
+uiModuleFromDocs : String -> Result Decode.Error String
+uiModuleFromDocs a =
+    a
         |> Decode.decodeString (Decode.list Docs.decoder)
         |> Result.map modulesToString
 
