@@ -1,4 +1,6 @@
 {
+  "name": "pravdomil-ui",
+  "bin": "bin/pravdomil-ui",
   "devDependencies": {
     "elm-ffi": "github:pravdomil/elm-ffi"
   }
