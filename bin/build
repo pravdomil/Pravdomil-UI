@@ -20,4 +20,5 @@ mkdir dist
 elm make src/Main.elm --output dist/elm.js --optimize
 elm-ffi dist/elm.js --run
 node dist/elm.js > dist/Base.elm
+rm dist/elm.js
 elm-format --yes dist/Base.elm
