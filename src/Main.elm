@@ -8,7 +8,7 @@ import Task exposing (Task)
 
 main : Program () () ()
 main =
-    JavaScript.cli
+    JavaScript.cliWithStdin
         (\v ->
             case uiModuleFromDocs v.stdin of
                 Ok b ->
