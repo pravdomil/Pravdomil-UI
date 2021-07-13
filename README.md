@@ -6,6 +6,6 @@
 
 ## Usage
 
-```sh
-pravdomil-ui <File.elm>
-```
+1. Create `Ui.Base` module. 
+1. Update `Ui.Base` using `pravdomil-ui <Base.elm>`.
+1. Provide a [`Ui.Style` module](dist/Style.elm).
