@@ -2,7 +2,9 @@
 
 ## Install
 
-1. `npm i pravdomil/pravdomil-ui -g`
+```sh
+npm i pravdomil/pravdomil-ui -g
+```
 
 ## Usage
 
