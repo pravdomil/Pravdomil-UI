@@ -125,6 +125,14 @@ inputSearch a =
     Element.Input.search (spacing A.inputSpacing :: padding A.inputPadding :: bgColor A.inputBgColor :: fontColor A.inputColor :: borderColor A.inputBorderColor :: borderWidth A.inputBorderWidth :: borderRounded A.inputBorderRounded :: a)
 
 
+inputNewPassword a =
+    Element.Input.newPassword (spacing A.inputSpacing :: padding A.inputPadding :: bgColor A.inputBgColor :: fontColor A.inputColor :: borderColor A.inputBorderColor :: borderWidth A.inputBorderWidth :: borderRounded A.inputBorderRounded :: a)
+
+
+inputCurrentPassword a =
+    Element.Input.currentPassword (spacing A.inputSpacing :: padding A.inputPadding :: bgColor A.inputBgColor :: fontColor A.inputColor :: borderColor A.inputBorderColor :: borderWidth A.inputBorderWidth :: borderRounded A.inputBorderRounded :: a)
+
+
 inputPlaceholder a =
     Element.Input.placeholder (fontColor A.placeholderColor :: fontSize A.placeholderFontSize :: a)
 
@@ -869,10 +877,6 @@ inputCheckbox =
     Element.Input.checkbox
 
 
-inputCurrentPassword =
-    Element.Input.currentPassword
-
-
 inputDefaultCheckbox =
     Element.Input.defaultCheckbox
 
@@ -891,10 +895,6 @@ inputFocusedOnLoad =
 
 inputLabelHidden =
     Element.Input.labelHidden
-
-
-inputNewPassword =
-    Element.Input.newPassword
 
 
 inputOption =

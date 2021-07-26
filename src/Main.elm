@@ -107,6 +107,8 @@ baseFunctions =
     , "inputText a = Element.Input.text " ++ inputAttr
     , "inputMultiline a = Element.Input.multiline " ++ inputAttr
     , "inputSearch a = Element.Input.search " ++ inputAttr
+    , "inputNewPassword a = Element.Input.newPassword " ++ inputAttr
+    , "inputCurrentPassword a = Element.Input.currentPassword " ++ inputAttr
     , ""
     , "inputPlaceholder a = Element.Input.placeholder (fontColor A.placeholderColor :: fontSize A.placeholderFontSize :: a)"
     , ""
@@ -181,6 +183,8 @@ valueToString module_ a =
             , ( "Element.Input", "text" )
             , ( "Element.Input", "multiline" )
             , ( "Element.Input", "search" )
+            , ( "Element.Input", "newPassword" )
+            , ( "Element.Input", "currentPassword" )
             , ( "Element.Input", "placeholder" )
             ]
     in
