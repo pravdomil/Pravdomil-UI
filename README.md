@@ -1,5 +1,7 @@
 # Pravdomil UI
 
+Design system for [Elm UI](https://github.com/mdgriffith/elm-ui).
+
 ## Install
 
 ```sh
