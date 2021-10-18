@@ -113,6 +113,10 @@ labelBelow a =
     Element.Input.labelBelow (fontColor A.labelColor :: fontSize A.labelFontSize :: a)
 
 
+labelHidden a =
+    Element.Input.labelHidden a
+
+
 inputText a =
     Element.Input.text (spacing A.inputSpacing :: padding A.inputPadding :: bgColor A.inputBgColor :: fontColor A.inputColor :: borderColor A.inputBorderColor :: borderWidth A.inputBorderWidth :: borderRounded A.inputBorderRounded :: a)
 
@@ -123,6 +127,10 @@ inputMultiline a =
 
 inputSearch a =
     Element.Input.search (spacing A.inputSpacing :: padding A.inputPadding :: bgColor A.inputBgColor :: fontColor A.inputColor :: borderColor A.inputBorderColor :: borderWidth A.inputBorderWidth :: borderRounded A.inputBorderRounded :: a)
+
+
+inputEmail a =
+    Element.Input.email (spacing A.inputSpacing :: padding A.inputPadding :: bgColor A.inputBgColor :: fontColor A.inputColor :: borderColor A.inputBorderColor :: borderWidth A.inputBorderWidth :: borderRounded A.inputBorderRounded :: a)
 
 
 inputNewPassword a =
@@ -885,16 +893,8 @@ inputDefaultThumb =
     Element.Input.defaultThumb
 
 
-inputEmail =
-    Element.Input.email
-
-
 inputFocusedOnLoad =
     Element.Input.focusedOnLoad
-
-
-inputLabelHidden =
-    Element.Input.labelHidden
 
 
 inputOption =
