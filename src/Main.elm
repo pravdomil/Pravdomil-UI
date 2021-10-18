@@ -103,6 +103,7 @@ baseFunctions =
     , "labelRight a = Element.Input.labelRight " ++ labelAttr
     , "labelAbove a = Element.Input.labelAbove " ++ labelAttr
     , "labelBelow a = Element.Input.labelBelow " ++ labelAttr
+    , "labelHidden a = Element.Input.labelHidden a"
     , ""
     , "inputText a = Element.Input.text " ++ inputAttr
     , "inputMultiline a = Element.Input.multiline " ++ inputAttr
@@ -180,6 +181,7 @@ valueToString module_ a =
             , ( "Element.Input", "labelRight" )
             , ( "Element.Input", "labelAbove" )
             , ( "Element.Input", "labelBelow" )
+            , ( "Element.Input", "labelHidden" )
             , ( "Element.Input", "text" )
             , ( "Element.Input", "multiline" )
             , ( "Element.Input", "search" )
