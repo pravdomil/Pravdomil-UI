@@ -119,31 +119,6 @@ baseFunctions =
     , "--"
     , ""
     ]
-        ++ ([ "baseFontFamily"
-            , "monospaceFontFamily"
-            , "shadow1"
-            , "shadow2"
-            , "shadow3"
-            , "grey0"
-            , "grey1"
-            , "grey2"
-            , "grey3"
-            , "grey4"
-            , "grey5"
-            , "grey6"
-            , "grey7"
-            , "grey8"
-            , "grey9"
-            , "grey10"
-            , "primary"
-            , "secondary"
-            , "success"
-            , "info"
-            , "warning"
-            , "danger"
-            ]
-                |> List.map (\v -> v ++ " = A." ++ v)
-           )
 
 
 
