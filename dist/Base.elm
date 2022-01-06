@@ -54,27 +54,27 @@ downloadAs a =
 
 
 heading1 a =
-    p (regionHeading 1 :: fontSize A.h1FontSize :: a)
+    paragraph (regionHeading 1 :: fontSize A.heading1FontSize :: a)
 
 
 heading2 a =
-    p (regionHeading 2 :: fontSize A.h2FontSize :: a)
+    paragraph (regionHeading 2 :: fontSize A.heading2FontSize :: a)
 
 
 heading3 a =
-    p (regionHeading 3 :: fontSize A.h3FontSize :: a)
+    paragraph (regionHeading 3 :: fontSize A.heading3FontSize :: a)
 
 
 heading4 a =
-    p (regionHeading 4 :: fontSize A.h4FontSize :: a)
+    paragraph (regionHeading 4 :: fontSize A.heading4FontSize :: a)
 
 
 heading5 a =
-    p (regionHeading 5 :: fontSize A.h5FontSize :: a)
+    paragraph (regionHeading 5 :: fontSize A.heading5FontSize :: a)
 
 
 heading6 a =
-    p (regionHeading 6 :: fontSize A.h6FontSize :: a)
+    paragraph (regionHeading 6 :: fontSize A.heading6FontSize :: a)
 
 
 lineBreak =
