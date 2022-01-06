@@ -36,27 +36,27 @@ hrBorderColor =
 --
 
 
-h1FontSize =
+heading1FontSize =
     20
 
 
-h2FontSize =
+heading2FontSize =
     baseFontSize
 
 
-h3FontSize =
+heading3FontSize =
     baseFontSize
 
 
-h4FontSize =
+heading4FontSize =
     baseFontSize
 
 
-h5FontSize =
+heading5FontSize =
     baseFontSize
 
 
-h6FontSize =
+heading6FontSize =
     baseFontSize
 
 
