@@ -75,7 +75,7 @@ baseFunctions =
     [ "layout a = Element.layout " ++ layoutAttr
     , "layoutWith opt a = Element.layoutWith opt " ++ layoutAttr
     , ""
-    , "p a = Element.paragraph (spacing A.baseLineSpacing :: a)"
+    , "paragraph a = Element.paragraph (spacing A.baseLineSpacing :: a)"
     , "textColumn a = Element.textColumn (spacing A.baseLineSpacing :: width fill :: a)" -- https://github.com/mdgriffith/elm-ui/issues/286
     , ""
     , "link a = Element.link (fontColor A.linkColor :: a)"
@@ -84,15 +84,15 @@ baseFunctions =
     , "download a = Element.download (fontColor A.linkColor :: a)"
     , "downloadAs a = Element.downloadAs (fontColor A.linkColor :: a)"
     , ""
-    , "h1 a = p (regionHeading 1 :: fontSize A.h1FontSize :: a)"
-    , "h2 a = p (regionHeading 2 :: fontSize A.h2FontSize :: a)"
-    , "h3 a = p (regionHeading 3 :: fontSize A.h3FontSize :: a)"
-    , "h4 a = p (regionHeading 4 :: fontSize A.h4FontSize :: a)"
-    , "h5 a = p (regionHeading 5 :: fontSize A.h5FontSize :: a)"
-    , "h6 a = p (regionHeading 6 :: fontSize A.h6FontSize :: a)"
+    , "heading1 a = p (regionHeading 1 :: fontSize A.h1FontSize :: a)"
+    , "heading2 a = p (regionHeading 2 :: fontSize A.h2FontSize :: a)"
+    , "heading3 a = p (regionHeading 3 :: fontSize A.h3FontSize :: a)"
+    , "heading4 a = p (regionHeading 4 :: fontSize A.h4FontSize :: a)"
+    , "heading5 a = p (regionHeading 5 :: fontSize A.h5FontSize :: a)"
+    , "heading6 a = p (regionHeading 6 :: fontSize A.h6FontSize :: a)"
     , ""
-    , "br = html (Html.br [] [])" -- https://github.com/mdgriffith/elm-ui/issues/276
-    , "hr = el [ width fill, paddingXY (Tuple.first A.hrPadding) (Tuple.second A.hrPadding) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.hrBorderColor ] none)"
+    , "lineBreak = html (Html.br [] [])" -- https://github.com/mdgriffith/elm-ui/issues/276
+    , "horizontalLine = el [ width fill, paddingXY (Tuple.first A.hrPadding) (Tuple.second A.hrPadding) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.hrBorderColor ] none)"
     , ""
     , "id a = htmlAttribute (Html.Attributes.id a)" -- https://github.com/mdgriffith/elm-ui/issues/319
     , "noneAttribute = htmlAttribute (Html.Attributes.classList [])"
