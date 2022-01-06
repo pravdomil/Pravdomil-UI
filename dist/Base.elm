@@ -82,7 +82,7 @@ lineBreak =
 
 
 horizontalLine =
-    el [ width fill, paddingXY (Tuple.first A.hrPadding) (Tuple.second A.hrPadding) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.hrBorderColor ] none)
+    el [ width fill, paddingXY (Tuple.first A.horizontalLinePadding) (Tuple.second A.horizontalLinePadding) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.horizontalLineColor ] none)
 
 
 id a =
