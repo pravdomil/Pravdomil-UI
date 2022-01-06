@@ -25,7 +25,7 @@ layoutWith opt a =
     Element.layoutWith opt (bgColor A.baseBgColor :: fontColor A.baseColor :: fontSize A.baseFontSize :: A.baseFontFamily :: a)
 
 
-p a =
+paragraph a =
     Element.paragraph (spacing A.baseLineSpacing :: a)
 
 
@@ -53,35 +53,35 @@ downloadAs a =
     Element.downloadAs (fontColor A.linkColor :: a)
 
 
-h1 a =
+heading1 a =
     p (regionHeading 1 :: fontSize A.h1FontSize :: a)
 
 
-h2 a =
+heading2 a =
     p (regionHeading 2 :: fontSize A.h2FontSize :: a)
 
 
-h3 a =
+heading3 a =
     p (regionHeading 3 :: fontSize A.h3FontSize :: a)
 
 
-h4 a =
+heading4 a =
     p (regionHeading 4 :: fontSize A.h4FontSize :: a)
 
 
-h5 a =
+heading5 a =
     p (regionHeading 5 :: fontSize A.h5FontSize :: a)
 
 
-h6 a =
+heading6 a =
     p (regionHeading 6 :: fontSize A.h6FontSize :: a)
 
 
-br =
+lineBreak =
     html (Html.br [] [])
 
 
-hr =
+horizontalLine =
     el [ width fill, paddingXY (Tuple.first A.hrPadding) (Tuple.second A.hrPadding) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.hrBorderColor ] none)
 
 
@@ -145,103 +145,8 @@ inputPlaceholder a =
     Element.Input.placeholder (fontColor A.placeholderColor :: fontSize A.placeholderFontSize :: a)
 
 
-adaptiveScale =
-    Html.node "style" [] [ Html.text "@media screen and (pointer: fine) { body { zoom: 0.875 } }" ]
-
-
 
 --
-
-
-baseFontFamily =
-    A.baseFontFamily
-
-
-monospaceFontFamily =
-    A.monospaceFontFamily
-
-
-shadow1 =
-    A.shadow1
-
-
-shadow2 =
-    A.shadow2
-
-
-shadow3 =
-    A.shadow3
-
-
-grey0 =
-    A.grey0
-
-
-grey1 =
-    A.grey1
-
-
-grey2 =
-    A.grey2
-
-
-grey3 =
-    A.grey3
-
-
-grey4 =
-    A.grey4
-
-
-grey5 =
-    A.grey5
-
-
-grey6 =
-    A.grey6
-
-
-grey7 =
-    A.grey7
-
-
-grey8 =
-    A.grey8
-
-
-grey9 =
-    A.grey9
-
-
-grey10 =
-    A.grey10
-
-
-primary =
-    A.primary
-
-
-secondary =
-    A.secondary
-
-
-success =
-    A.success
-
-
-info =
-    A.info
-
-
-warning =
-    A.warning
-
-
-danger =
-    A.danger
-
-
-
 --
 
 
