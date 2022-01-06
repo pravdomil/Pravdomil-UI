@@ -24,11 +24,11 @@ linkColor =
     primary
 
 
-hrPadding =
+horizontalLinePadding =
     ( 0, 16 )
 
 
-hrBorderColor =
+horizontalLineColor =
     grey7
 
 

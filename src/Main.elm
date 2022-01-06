@@ -92,7 +92,7 @@ baseFunctions =
     , "heading6 a = paragraph (regionHeading 6 :: fontSize A.heading6FontSize :: a)"
     , ""
     , "lineBreak = html (Html.br [] [])" -- https://github.com/mdgriffith/elm-ui/issues/276
-    , "horizontalLine = el [ width fill, paddingXY (Tuple.first A.hrPadding) (Tuple.second A.hrPadding) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.hrBorderColor ] none)"
+    , "horizontalLine = el [ width fill, paddingXY (Tuple.first A.horizontalLinePadding) (Tuple.second A.horizontalLinePadding) ] (el [ width fill, borderWidthEach 0 0 0 1, borderColor A.horizontalLineColor ] none)"
     , ""
     , "id a = htmlAttribute (Html.Attributes.id a)" -- https://github.com/mdgriffith/elm-ui/issues/319
     , "noneAttribute = htmlAttribute (Html.Attributes.classList [])"
