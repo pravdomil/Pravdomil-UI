@@ -8,7 +8,7 @@ import Markdown.Html
 import Markdown.Renderer
 
 
-renderer : Element.PravdomilUI.Theme.Theme msg -> Markdown.Renderer.Renderer (Element msg)
+renderer : Element.PravdomilUI.Theme.Theme msg a -> Markdown.Renderer.Renderer (Element msg)
 renderer theme =
     { heading = heading theme
     , paragraph = paragraph theme []
@@ -35,7 +35,7 @@ renderer theme =
     }
 
 
-heading : Element.PravdomilUI.Theme.Theme msg -> { level : Markdown.Block.HeadingLevel, rawText : String, children : List (Element msg) } -> Element msg
+heading : Element.PravdomilUI.Theme.Theme msg a -> { level : Markdown.Block.HeadingLevel, rawText : String, children : List (Element msg) } -> Element msg
 heading theme a =
     case a.level of
         Markdown.Block.H1 ->
@@ -57,7 +57,7 @@ heading theme a =
             heading6 theme [ paddingEach 0 0 16 0, id (idFromString a.rawText) ] a.children
 
 
-link_ : Element.PravdomilUI.Theme.Theme msg -> { title : Maybe String, destination : String } -> List (Element msg) -> Element msg
+link_ : Element.PravdomilUI.Theme.Theme msg a -> { title : Maybe String, destination : String } -> List (Element msg) -> Element msg
 link_ theme a b =
     let
         titleAttr : Attribute msg
@@ -71,7 +71,7 @@ link_ theme a b =
         }
 
 
-image_ : Element.PravdomilUI.Theme.Theme msg -> { alt : String, src : String, title : Maybe String } -> Element msg
+image_ : Element.PravdomilUI.Theme.Theme msg a -> { alt : String, src : String, title : Maybe String } -> Element msg
 image_ _ a =
     let
         titleAttr : Attribute msg
@@ -84,7 +84,7 @@ image_ _ a =
         }
 
 
-unorderedList : Element.PravdomilUI.Theme.Theme msg -> List (Markdown.Block.ListItem (Element msg)) -> Element msg
+unorderedList : Element.PravdomilUI.Theme.Theme msg a -> List (Markdown.Block.ListItem (Element msg)) -> Element msg
 unorderedList theme a =
     column [ spacing 16, paddingEach 4 0 0 0 ]
         (a
@@ -108,7 +108,7 @@ unorderedList theme a =
         )
 
 
-orderedList : Element.PravdomilUI.Theme.Theme msg -> Int -> List (List (Element msg)) -> Element msg
+orderedList : Element.PravdomilUI.Theme.Theme msg a -> Int -> List (List (Element msg)) -> Element msg
 orderedList theme startIndex a =
     column [ spacing 16, paddingEach 4 0 0 0 ]
         (a

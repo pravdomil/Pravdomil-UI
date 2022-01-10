@@ -4,7 +4,7 @@ import Element.PravdomilUI exposing (..)
 import Element.PravdomilUI.Theme
 
 
-theme : Element.PravdomilUI.Theme.Theme msg
+theme : Element.PravdomilUI.Theme.Theme msg {}
 theme =
     { page =
         [ bgColor black10
