@@ -41,8 +41,8 @@ link theme a =
     Element.link (theme.link ++ a)
 
 
-link_ : Element.PravdomilUI.Theme.Theme msg a -> List (Attribute msg) -> { label : Element msg, onPress : Maybe msg } -> Element msg
-link_ theme a =
+linkWithOnPress : Element.PravdomilUI.Theme.Theme msg a -> List (Attribute msg) -> { label : Element msg, onPress : Maybe msg } -> Element msg
+linkWithOnPress theme a =
     Element.Input.button (theme.link ++ a)
 
 
