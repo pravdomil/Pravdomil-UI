@@ -4,12 +4,6 @@ Design system for [Elm UI](https://github.com/mdgriffith/elm-ui).
 
 ## Install
 
-```sh
-npm i pravdomil/pravdomil-ui -g
-```
-
-## Usage
-
-1. Create `Ui.Base` module.
-1. Update `Ui.Base` using `pravdomil-ui <Base.elm>`.
-1. Provide a [`Ui.Style`](dist/Style.elm) module.
+1. `npm i pravdomil/pravdomil-ui --save-dev`
+1. Add `node_modules/pravdomil-ui/src` into `elm.json`/`source-directories`.
+1. Use [Element.PravdomilUI module](src/Element/PravdomilUI.elm).
