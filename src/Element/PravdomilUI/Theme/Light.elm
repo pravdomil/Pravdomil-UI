@@ -152,6 +152,6 @@ style =
             { offset = ( 0, v / 3 )
             , size = 0
             , blur = v
-            , color = rgb 0 0 0 |> toRgb |> (\v2 -> { v2 | alpha = 0.2 }) |> fromRgb
+            , color = rgba 0 0 0 0.2
             }
     }
