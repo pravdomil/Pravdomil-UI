@@ -6,7 +6,17 @@ import Element.PravdomilUI.Theme
 
 theme : Element.PravdomilUI.Theme.Style {} -> Element.PravdomilUI.Theme.Theme msg {}
 theme a =
-    { options = []
+    let
+        focusShadow =
+            { color = a.primary |> toRgb |> (\v -> { v | alpha = 0.4 }) |> fromRgb
+            , offset = ( 0, 0 )
+            , blur = 0
+            , size = 4
+            }
+    in
+    { options =
+        [ focusStyle { backgroundColor = Nothing, borderColor = Nothing, shadow = Just focusShadow }
+        ]
     , page =
         [ bgColor a.black10
         , fontColor a.black90
@@ -22,6 +32,7 @@ theme a =
     , link =
         [ fontColor a.primary
         , borderRounded 4
+        , focused [ borderShadow focusShadow ]
         ]
     , heading1 =
         [ fontSize 32
