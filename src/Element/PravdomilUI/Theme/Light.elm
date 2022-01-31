@@ -1,4 +1,4 @@
-module Element.PravdomilUI.LightTheme exposing (..)
+module Element.PravdomilUI.Theme.Light exposing (..)
 
 import Element.PravdomilUI exposing (..)
 import Element.PravdomilUI.Theme
