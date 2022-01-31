@@ -96,7 +96,7 @@ theme a =
 --
 
 
-style : Element.PravdomilUI.Theme.Style a
+style : Element.PravdomilUI.Theme.Style {}
 style =
     { black0 = rgb 1 1 1
     , black10 = rgb 0.96 0.97 0.97
