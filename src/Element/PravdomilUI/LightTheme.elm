@@ -20,6 +20,7 @@ theme =
         ]
     , link =
         [ fontColor primary
+        , borderRounded 4
         ]
     , heading1 =
         [ fontSize 32
