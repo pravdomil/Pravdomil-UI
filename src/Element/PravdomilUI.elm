@@ -16,12 +16,12 @@ import Html.Attributes
 
 layout : Element.PravdomilUI.Theme.Theme msg a -> List (Attribute msg) -> Element msg -> Html.Html msg
 layout theme a =
-    Element.layout (theme.page ++ a)
+    Element.layoutWith { options = theme.options } (theme.page ++ a)
 
 
 layoutWith : Element.PravdomilUI.Theme.Theme msg a -> { options : List Option } -> List (Attribute msg) -> Element msg -> Html.Html msg
 layoutWith theme opt a =
-    Element.layoutWith opt (theme.page ++ a)
+    Element.layoutWith { opt | options = theme.options ++ opt.options } (theme.page ++ a)
 
 
 paragraph : Element.PravdomilUI.Theme.Theme msg a -> List (Attribute msg) -> List (Element msg) -> Element msg

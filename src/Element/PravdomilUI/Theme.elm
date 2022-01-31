@@ -6,7 +6,8 @@ import Element.Font
 
 type alias Theme msg a =
     { a
-        | page : List (Element.Attribute msg)
+        | options : List Element.Option
+        , page : List (Element.Attribute msg)
         , paragraph : List (Element.Attribute msg)
         , textColumn : List (Element.Attribute msg)
         , link : List (Element.Attribute msg)

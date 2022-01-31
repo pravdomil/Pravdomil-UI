@@ -6,7 +6,8 @@ import Element.PravdomilUI.Theme
 
 theme : Element.PravdomilUI.Theme.Style {} -> Element.PravdomilUI.Theme.Theme msg {}
 theme a =
-    { page =
+    { options = []
+    , page =
         [ bgColor a.black10
         , fontColor a.black90
         , fontSize 16
