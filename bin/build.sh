@@ -19,5 +19,5 @@ mkdir dist
 # Compile application.
 elm make src-cli/Main.elm --output dist/elm.js --optimize
 elm-ffi dist/elm.js --run
-curl --compressed https://package.elm-lang.org/packages/mdgriffith/elm-ui/latest/docs.json | node dist/elm.js > src/Element/PravdomilUI.elm
-elm-format --yes src/Element/PravdomilUI.elm
+curl --compressed https://package.elm-lang.org/packages/mdgriffith/elm-ui/latest/docs.json | node dist/elm.js > src/Element/PravdomilUi.elm
+elm-format --yes src/Element/PravdomilUi.elm

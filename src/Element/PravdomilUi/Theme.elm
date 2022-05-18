@@ -1,4 +1,4 @@
-module Element.PravdomilUI.Theme exposing (..)
+module Element.PravdomilUi.Theme exposing (..)
 
 import Element
 import Element.Font

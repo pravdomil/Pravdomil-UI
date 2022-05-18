@@ -6,4 +6,4 @@ Design system for [Elm UI](https://github.com/mdgriffith/elm-ui).
 
 1. `npm i pravdomil/pravdomil-ui --save-dev`
 1. Add `node_modules/pravdomil-ui/src` into `elm.json`/`source-directories`.
-1. Use [Element.PravdomilUI module](src/Element/PravdomilUI.elm).
+1. Use [Element.PravdomilUi module](src/Element/PravdomilUi.elm).

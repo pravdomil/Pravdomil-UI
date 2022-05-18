@@ -27,13 +27,13 @@ uiModuleFromDocs : String -> Result Json.Decode.Error String
 uiModuleFromDocs a =
     a
         |> Json.Decode.decodeString (Json.Decode.list Elm.Docs.decoder)
-        |> Result.map modulesToPravdomilUI
+        |> Result.map modulesToPravdomilUi
 
 
-modulesToPravdomilUI : List Elm.Docs.Module -> String
-modulesToPravdomilUI a =
+modulesToPravdomilUi : List Elm.Docs.Module -> String
+modulesToPravdomilUi a =
     a
-        |> List.map moduleToPravdomilUI
+        |> List.map moduleToPravdomilUi
         |> (::) (header a)
         |> List.map (String.join "\n")
         |> String.join "\n\n--\n\n"
@@ -41,7 +41,7 @@ modulesToPravdomilUI a =
 
 header : List Elm.Docs.Module -> List String
 header a =
-    [ "module Element.PravdomilUI exposing (..)"
+    [ "module Element.PravdomilUi exposing (..)"
     , ""
     , "import Html"
     , "import Html.Attributes"
@@ -53,14 +53,14 @@ header a =
 --
 
 
-moduleToPravdomilUI : Elm.Docs.Module -> List String
-moduleToPravdomilUI a =
-    List.map (aliasToPravdomilUI a) a.aliases
-        ++ List.filterMap (valueToPravdomilUI a) a.values
+moduleToPravdomilUi : Elm.Docs.Module -> List String
+moduleToPravdomilUi a =
+    List.map (aliasToPravdomilUi a) a.aliases
+        ++ List.filterMap (valueToPravdomilUi a) a.values
 
 
-valueToPravdomilUI : Elm.Docs.Module -> Elm.Docs.Value -> Maybe String
-valueToPravdomilUI module_ a =
+valueToPravdomilUi : Elm.Docs.Module -> Elm.Docs.Value -> Maybe String
+valueToPravdomilUi module_ a =
     let
         ignored : List ( String, String )
         ignored =
@@ -100,8 +100,8 @@ valueToPravdomilUI module_ a =
         Just (normalizeName module_.name a.name ++ " = " ++ module_.name ++ "." ++ a.name)
 
 
-aliasToPravdomilUI : Elm.Docs.Module -> Elm.Docs.Alias -> String
-aliasToPravdomilUI module_ a =
+aliasToPravdomilUi : Elm.Docs.Module -> Elm.Docs.Alias -> String
+aliasToPravdomilUi module_ a =
     let
         args : String
         args =

@@ -1,10 +1,10 @@
-module Element.PravdomilUI.Theme.Light exposing (..)
+module Element.PravdomilUi.Theme.Light exposing (..)
 
-import Element.PravdomilUI exposing (..)
-import Element.PravdomilUI.Theme
+import Element.PravdomilUi exposing (..)
+import Element.PravdomilUi.Theme
 
 
-theme : Element.PravdomilUI.Theme.Style {} -> Element.PravdomilUI.Theme.Theme msg {}
+theme : Element.PravdomilUi.Theme.Style {} -> Element.PravdomilUi.Theme.Theme msg {}
 theme a =
     let
         focusShadow =
@@ -107,7 +107,7 @@ theme a =
 --
 
 
-style : Element.PravdomilUI.Theme.Style {}
+style : Element.PravdomilUi.Theme.Style {}
 style =
     { black0 = rgb 1 1 1
     , black10 = rgb 0.96 0.97 0.97
