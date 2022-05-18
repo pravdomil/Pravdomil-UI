@@ -1,14 +1,14 @@
 module Main exposing (..)
 
 import Elm.Docs
-import Interop.JavaScript
+import JavaScript
 import Json.Decode
 import Task
 
 
 main : Program () () ()
 main =
-    Interop.JavaScript.commandLineProgramWithStdin
+    JavaScript.commandLineProgramWithStdin
         (\v ->
             case uiModuleFromDocs v.stdin of
                 Ok b ->
