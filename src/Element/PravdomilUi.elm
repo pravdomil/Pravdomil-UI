@@ -12,6 +12,7 @@ import Element.PravdomilUi.Theme
 import Element.Region
 import Html
 import Html.Attributes
+import Html.Events
 
 
 layout : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> Element msg -> Html.Html msg
@@ -194,6 +195,18 @@ id a =
 noneAttribute : Attribute msg
 noneAttribute =
     htmlAttribute (Html.Attributes.classList [])
+
+
+{-| <https://github.com/mdgriffith/elm-ui/issues/291>
+-}
+form : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { onSubmit : msg, body : Element msg } -> Element msg
+form theme attrs a =
+    el attrs
+        (html
+            (Html.form [ Html.Events.onSubmit a.onSubmit ]
+                [ layoutWith theme { options = [ noStaticStyleSheet ] } [] a.body ]
+            )
+        )
 
 
 
