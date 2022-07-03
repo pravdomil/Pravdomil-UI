@@ -31,17 +31,17 @@ type alias Theme msg a =
 
 type alias Style a =
     { a
-        | black0 : Element.Color
-        , black10 : Element.Color
-        , black20 : Element.Color
-        , black30 : Element.Color
-        , black40 : Element.Color
-        , black50 : Element.Color
-        , black60 : Element.Color
-        , black70 : Element.Color
-        , black80 : Element.Color
+        | black100 : Element.Color
         , black90 : Element.Color
-        , black100 : Element.Color
+        , black80 : Element.Color
+        , black70 : Element.Color
+        , black60 : Element.Color
+        , black50 : Element.Color
+        , black40 : Element.Color
+        , black30 : Element.Color
+        , black20 : Element.Color
+        , black10 : Element.Color
+        , black0 : Element.Color
 
         --
         , primary : Element.Color

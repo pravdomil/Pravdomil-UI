@@ -109,17 +109,17 @@ theme a =
 
 style : Element.PravdomilUi.Theme.Style {}
 style =
-    { black0 = rgb 1 1 1
-    , black10 = rgb 0.96 0.97 0.97
-    , black20 = rgb 0.9 0.92 0.93
-    , black30 = rgb 0.86 0.88 0.89
-    , black40 = rgb 0.8 0.82 0.84
-    , black50 = rgb 0.67 0.7 0.73
-    , black60 = rgb 0.41 0.45 0.48
-    , black70 = rgb 0.28 0.3 0.33
-    , black80 = rgb 0.19 0.22 0.24
+    { black100 = rgb 0 0 0
     , black90 = rgb 0.12 0.14 0.15
-    , black100 = rgb 0 0 0
+    , black80 = rgb 0.19 0.22 0.24
+    , black70 = rgb 0.28 0.3 0.33
+    , black60 = rgb 0.41 0.45 0.48
+    , black50 = rgb 0.67 0.7 0.73
+    , black40 = rgb 0.8 0.82 0.84
+    , black30 = rgb 0.86 0.88 0.89
+    , black20 = rgb 0.9 0.92 0.93
+    , black10 = rgb 0.96 0.97 0.97
+    , black0 = rgb 1 1 1
 
     --
     , primary = rgb 0.05 0.43 0.99
