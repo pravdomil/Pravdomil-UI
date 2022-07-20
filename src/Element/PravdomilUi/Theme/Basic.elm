@@ -112,7 +112,7 @@ style =
     { fore100 = rgb 0 0 0
     , fore90 = rgb 0.12 0.14 0.15
     , fore80 = rgb 0.19 0.22 0.24
-    , fore70 = rgb 0.28 0.31 0.33
+    , fore70 = rgb 0.28 0.31 0.34
     , fore60 = rgb 0.41 0.45 0.48
     , fore50 = rgb 0.54 0.58 0.61
 
