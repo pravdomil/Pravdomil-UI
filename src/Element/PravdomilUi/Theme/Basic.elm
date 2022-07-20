@@ -163,10 +163,10 @@ style =
     --
     , backdrop = rgba 0 0 0 0.4
     , shadow =
-        \v ->
-            { offset = ( 0, v / 3 )
+        \x ->
+            { offset = ( 0, x / 3 )
             , size = 0
-            , blur = v
-            , color = rgba 0 0 0 0.2
+            , blur = x
+            , color = rgba 0 0 0 (max 0.2 (min 0.6 (x / 32)))
             }
     }
