@@ -13,6 +13,7 @@ import Element.Region
 import Html
 import Html.Attributes
 import Html.Events
+import Json.Decode
 
 
 layout : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> Element msg -> Html.Html msg
@@ -205,6 +206,23 @@ form theme attrs a =
         (html
             (Html.form [ Html.Events.onSubmit a.onSubmit ]
                 [ layoutWith theme { options = [ noStaticStyleSheet ] } [] a.body ]
+            )
+        )
+
+
+onEnter : msg -> Attribute msg
+onEnter a =
+    htmlAttribute
+        (Html.Events.on "keyup"
+            (Json.Decode.field "key" Json.Decode.string
+                |> Json.Decode.andThen
+                    (\x ->
+                        if x == "Enter" then
+                            Json.Decode.succeed a
+
+                        else
+                            Json.Decode.fail "Not an enter."
+                    )
             )
         )
 
