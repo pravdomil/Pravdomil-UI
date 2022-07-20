@@ -161,6 +161,7 @@ style =
         ]
 
     --
+    , backdrop = rgba 0 0 0 0.4
     , shadow =
         \v ->
             { offset = ( 0, v / 3 )

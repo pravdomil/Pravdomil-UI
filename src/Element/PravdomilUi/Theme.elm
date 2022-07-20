@@ -61,6 +61,7 @@ type alias Style a =
         , monospaceFontFamily : List Element.Font.Font
 
         --
+        , backdrop : Element.Color
         , shadow :
             Float
             ->
