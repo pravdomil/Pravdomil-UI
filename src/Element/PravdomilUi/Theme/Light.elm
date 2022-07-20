@@ -18,8 +18,8 @@ theme a =
         [ focusStyle { backgroundColor = Nothing, borderColor = Nothing, shadow = Just focusShadow }
         ]
     , page =
-        [ bgColor a.black10
-        , fontColor a.black90
+        [ bgColor a.back90
+        , fontColor a.fore90
         , fontSize 16
         , fontFamily a.fontFamily
         ]
@@ -54,33 +54,33 @@ theme a =
         ]
     , horizontalLine =
         [ borderWidthEach 0 0 0 1
-        , borderColor a.black30
+        , borderColor a.back70
         ]
     , horizontalLineContainer =
         [ paddingXY 0 16
         ]
     , label =
-        [ fontColor a.black60
+        [ fontColor a.fore60
         , fontSize 14
         ]
     , button =
         [ spacing 8
         , padding 8
         , bgColor a.primary
-        , fontColor a.black0
+        , fontColor a.back100
         , borderRounded 8
         ]
     , input =
         [ spacing 8
         , padding 8
-        , bgColor a.black0
-        , fontColor a.black90
-        , borderColor a.black40
+        , bgColor a.back100
+        , fontColor a.fore90
+        , borderColor a.back60
         , borderWidth 1
         , borderRounded 4
         ]
     , inputPlaceholder =
-        [ fontColor a.black60
+        [ fontColor a.fore60
         , fontSize 14
         ]
     , blockQuote =
@@ -90,14 +90,14 @@ theme a =
     , codeSpan =
         [ padding 2
         , borderRounded 4
-        , bgColor a.black20
+        , bgColor a.back80
         , fontFamily a.monospaceFontFamily
         ]
     , codeBlock =
         [ width fill
         , padding 8
         , borderRounded 4
-        , bgColor a.black20
+        , bgColor a.back80
         , fontFamily a.monospaceFontFamily
         ]
     }
@@ -109,17 +109,20 @@ theme a =
 
 style : Element.PravdomilUi.Theme.Style {}
 style =
-    { black100 = rgb 0 0 0
-    , black90 = rgb 0.12 0.14 0.15
-    , black80 = rgb 0.19 0.22 0.24
-    , black70 = rgb 0.28 0.31 0.33
-    , black60 = rgb 0.41 0.45 0.48
-    , black50 = rgb 0.67 0.7 0.73
-    , black40 = rgb 0.8 0.82 0.84
-    , black30 = rgb 0.86 0.88 0.89
-    , black20 = rgb 0.9 0.92 0.93
-    , black10 = rgb 0.96 0.97 0.97
-    , black0 = rgb 1 1 1
+    { fore100 = rgb 0 0 0
+    , fore90 = rgb 0.12 0.14 0.15
+    , fore80 = rgb 0.19 0.22 0.24
+    , fore70 = rgb 0.28 0.31 0.33
+    , fore60 = rgb 0.41 0.45 0.48
+    , fore50 = rgb 0.54 0.58 0.61
+
+    --
+    , back100 = rgb 1 1 1
+    , back90 = rgb 0.96 0.97 0.97
+    , back80 = rgb 0.9 0.92 0.93
+    , back70 = rgb 0.86 0.88 0.89
+    , back60 = rgb 0.8 0.82 0.84
+    , back50 = rgb 0.67 0.7 0.73
 
     --
     , primary = rgb 0.05 0.43 0.99
