@@ -1,5 +1,6 @@
 module Element.PravdomilUi.Theme.Basic exposing (..)
 
+import Element.Input
 import Element.PravdomilUi exposing (..)
 import Element.PravdomilUi.Theme
 
@@ -83,6 +84,35 @@ theme a =
         [ fontColor a.fore60
         , fontSize 14
         ]
+    , inputOption =
+        \x ->
+            [ width (px 16)
+            , height (px 16)
+            , bgColor style.back100
+            , borderRounded 8
+            , borderWidth
+                (case x of
+                    Element.Input.Idle ->
+                        1
+
+                    Element.Input.Focused ->
+                        1
+
+                    Element.Input.Selected ->
+                        5
+                )
+            , borderColor
+                (case x of
+                    Element.Input.Idle ->
+                        style.back60
+
+                    Element.Input.Focused ->
+                        style.primary
+
+                    Element.Input.Selected ->
+                        style.primary
+                )
+            ]
     , blockQuote =
         [ spacing 16
         , paddingEach 32 0 0 0

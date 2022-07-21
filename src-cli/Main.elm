@@ -85,6 +85,7 @@ valueToPravdomilUi module_ a =
             , ( "Element.Input", "newPassword" )
             , ( "Element.Input", "currentPassword" )
             , ( "Element.Input", "placeholder" )
+            , ( "Element.Input", "option" )
             ]
     in
     if List.member ( module_.name, a.name ) ignored then

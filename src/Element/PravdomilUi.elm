@@ -164,6 +164,16 @@ inputPlaceholder theme a =
     Element.Input.placeholder (theme.inputPlaceholder ++ a)
 
 
+inputOption : Element.PravdomilUi.Theme.Theme msg a -> b -> Element msg -> Element.Input.Option b msg
+inputOption theme a label =
+    Element.Input.optionWith a (inputRadioOption theme label)
+
+
+inputRadioOption : Element.PravdomilUi.Theme.Theme msg a -> Element msg -> Element.Input.OptionState -> Element msg
+inputRadioOption theme label state =
+    row [ spacing 8, height fill ] [ el (theme.inputOption state) none, label ]
+
+
 blockQuote : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> List (Element msg) -> Element msg
 blockQuote theme a =
     column (theme.blockQuote ++ a)
@@ -881,10 +891,6 @@ inputDefaultThumb =
 
 inputFocusedOnLoad =
     Element.Input.focusedOnLoad
-
-
-inputOption =
-    Element.Input.option
 
 
 inputOptionWith =
