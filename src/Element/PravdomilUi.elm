@@ -201,6 +201,21 @@ lineBreak =
     html (Html.br [] [])
 
 
+{-| <https://github.com/mdgriffith/elm-ui/issues/112>
+-}
+textEllipsis : String -> Element msg
+textEllipsis a =
+    el
+        [ width fill
+        , clip
+        , htmlAttribute (Html.Attributes.style "display" "inline-block")
+        , htmlAttribute (Html.Attributes.style "text-overflow" "ellipsis")
+        , htmlAttribute (Html.Attributes.style "white-space" "nowrap")
+        , htmlAttribute (Html.Attributes.style "line-height" "normal")
+        ]
+        (html (Html.text a))
+
+
 {-| <https://github.com/mdgriffith/elm-ui/issues/319>
 -}
 id : String -> Attribute msg
