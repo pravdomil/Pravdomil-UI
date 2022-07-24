@@ -88,28 +88,28 @@ theme a =
         \x ->
             [ height fill
             , padding 4
-            , bgColor style.back100
-            , fontColor style.primary
+            , bgColor a.back100
+            , fontColor a.primary
             , fontSize 15
             , borderRounded 8
             , borderWidth 1
             , borderColor
                 (case x of
                     Element.Input.Idle ->
-                        style.back100
+                        a.back100
 
                     Element.Input.Focused ->
-                        style.primary
+                        a.primary
 
                     Element.Input.Selected ->
-                        style.primary
+                        a.primary
                 )
             ]
     , inputRadioOption =
         \x ->
             [ width (px 16)
             , height (px 16)
-            , bgColor style.back100
+            , bgColor a.back100
             , borderRounded 8
             , borderWidth
                 (case x of
@@ -125,13 +125,13 @@ theme a =
             , borderColor
                 (case x of
                     Element.Input.Idle ->
-                        style.back60
+                        a.back60
 
                     Element.Input.Focused ->
-                        style.primary
+                        a.primary
 
                     Element.Input.Selected ->
-                        style.primary
+                        a.primary
                 )
             ]
     , blockQuote =
