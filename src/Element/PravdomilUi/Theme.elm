@@ -48,8 +48,8 @@ type alias Style =
     , back50 : Element.Color
 
     --
-    , primary : Element.Color
-    , secondary : Element.Color
+    , primaryBack : Element.Color
+    , secondaryBack : Element.Color
 
     --
     , danger : Element.Color

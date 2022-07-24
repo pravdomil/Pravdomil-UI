@@ -9,7 +9,7 @@ theme : Element.PravdomilUi.Theme.Style -> Element.PravdomilUi.Theme.Theme msg
 theme a =
     let
         focusShadow =
-            { color = a.primary |> toRgb |> (\v -> { v | alpha = 0.4 }) |> fromRgb
+            { color = a.primaryBack |> toRgb |> (\v -> { v | alpha = 0.4 }) |> fromRgb
             , offset = ( 0, 0 )
             , blur = 0
             , size = 4
@@ -31,7 +31,7 @@ theme a =
         [ spacing 8
         ]
     , link =
-        [ fontColor a.primary
+        [ fontColor a.primaryBack
         , borderRounded 4
         , focused [ borderShadow focusShadow ]
         ]
@@ -67,7 +67,7 @@ theme a =
     , button =
         [ spacing 8
         , padding 8
-        , bgColor a.primary
+        , bgColor a.primaryBack
         , fontColor a.back100
         , borderRounded 8
         ]
@@ -89,7 +89,7 @@ theme a =
             [ height fill
             , padding 4
             , bgColor a.back100
-            , fontColor a.primary
+            , fontColor a.primaryBack
             , fontSize 15
             , borderRounded 8
             , borderWidth 1
@@ -99,10 +99,10 @@ theme a =
                         a.back100
 
                     Element.Input.Focused ->
-                        a.primary
+                        a.primaryBack
 
                     Element.Input.Selected ->
-                        a.primary
+                        a.primaryBack
                 )
             ]
     , inputRadioOption =
@@ -128,10 +128,10 @@ theme a =
                         a.back60
 
                     Element.Input.Focused ->
-                        a.primary
+                        a.primaryBack
 
                     Element.Input.Selected ->
-                        a.primary
+                        a.primaryBack
                 )
             ]
     , blockQuote =
@@ -176,8 +176,8 @@ style =
     , back50 = rgb 0.67 0.7 0.73
 
     --
-    , primary = rgb 0.05 0.43 0.99
-    , secondary = rgb 0.41 0.45 0.48
+    , primaryBack = rgb 0.05 0.43 0.99
+    , secondaryBack = rgb 0.41 0.45 0.48
 
     --
     , danger = rgb 0.86 0.21 0.27
