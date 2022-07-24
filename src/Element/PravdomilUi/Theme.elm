@@ -49,7 +49,11 @@ type alias Style =
 
     --
     , primaryBack : Element.Color
+    , primaryFore : Element.Color
+
+    --
     , secondaryBack : Element.Color
+    , secondaryFore : Element.Color
 
     --
     , danger : Element.Color

@@ -68,7 +68,7 @@ theme a =
         [ spacing 8
         , padding 8
         , bgColor a.primaryBack
-        , fontColor a.back100
+        , fontColor a.primaryFore
         , borderRounded 8
         ]
     , input =
@@ -177,7 +177,11 @@ style =
 
     --
     , primaryBack = rgb 0.05 0.43 0.99
+    , primaryFore = rgb 1 1 1
+
+    --
     , secondaryBack = rgb 0.41 0.45 0.48
+    , secondaryFore = rgb 1 1 1
 
     --
     , danger = rgb 0.86 0.21 0.27
