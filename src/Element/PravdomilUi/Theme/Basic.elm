@@ -84,6 +84,27 @@ theme a =
         [ fontColor a.fore60
         , fontSize 14
         ]
+    , inputBlockOption =
+        \x ->
+            [ height fill
+            , padding 4
+            , bgColor style.back100
+            , fontColor style.primary
+            , fontSize 15
+            , borderRounded 8
+            , borderWidth 1
+            , borderColor
+                (case x of
+                    Element.Input.Idle ->
+                        style.back100
+
+                    Element.Input.Focused ->
+                        style.primary
+
+                    Element.Input.Selected ->
+                        style.primary
+                )
+            ]
     , inputRadioOption =
         \x ->
             [ width (px 16)

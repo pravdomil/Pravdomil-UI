@@ -166,7 +166,12 @@ inputPlaceholder theme a =
 
 inputOption : Element.PravdomilUi.Theme.Theme msg -> b -> Element msg -> Element.Input.Option b msg
 inputOption theme a label =
-    Element.Input.optionWith a (inputRadioOption theme label)
+    Element.Input.optionWith a (inputBlockOption theme label)
+
+
+inputBlockOption : Element.PravdomilUi.Theme.Theme msg -> Element msg -> Element.Input.OptionState -> Element msg
+inputBlockOption theme label state =
+    el (theme.inputBlockOption state) (el [ centerX, centerY ] label)
 
 
 inputRadioOption : Element.PravdomilUi.Theme.Theme msg -> Element msg -> Element.Input.OptionState -> Element msg
