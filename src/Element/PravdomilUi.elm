@@ -16,105 +16,105 @@ import Html.Events
 import Json.Decode
 
 
-layout : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> Element msg -> Html.Html msg
+layout : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> Element msg -> Html.Html msg
 layout theme a =
     Element.layoutWith { options = theme.options } (theme.page ++ a)
 
 
-layoutWith : Element.PravdomilUi.Theme.Theme msg a -> { options : List Option } -> List (Attribute msg) -> Element msg -> Html.Html msg
+layoutWith : Element.PravdomilUi.Theme.Theme msg -> { options : List Option } -> List (Attribute msg) -> Element msg -> Html.Html msg
 layoutWith theme opt a =
     Element.layoutWith { opt | options = theme.options ++ opt.options } (theme.page ++ a)
 
 
-paragraph : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> List (Element msg) -> Element msg
+paragraph : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> List (Element msg) -> Element msg
 paragraph theme a =
     Element.paragraph (theme.paragraph ++ a)
 
 
 {-| <https://github.com/mdgriffith/elm-ui/issues/286>
 -}
-textColumn : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> List (Element msg) -> Element msg
+textColumn : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> List (Element msg) -> Element msg
 textColumn theme a =
     Element.textColumn (width fill :: theme.textColumn ++ a)
 
 
-link : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { label : Element msg, url : String } -> Element msg
+link : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { label : Element msg, url : String } -> Element msg
 link theme a =
     Element.link (theme.link ++ a)
 
 
-linkWithOnPress : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { label : Element msg, onPress : Maybe msg } -> Element msg
+linkWithOnPress : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { label : Element msg, onPress : Maybe msg } -> Element msg
 linkWithOnPress theme a =
     Element.Input.button (theme.link ++ a)
 
 
-newTabLink : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { label : Element msg, url : String } -> Element msg
+newTabLink : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { label : Element msg, url : String } -> Element msg
 newTabLink theme a =
     Element.newTabLink (theme.link ++ a)
 
 
-download : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { label : Element msg, url : String } -> Element msg
+download : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { label : Element msg, url : String } -> Element msg
 download theme a =
     Element.download (theme.link ++ a)
 
 
-downloadAs : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { label : Element msg, filename : String, url : String } -> Element msg
+downloadAs : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { label : Element msg, filename : String, url : String } -> Element msg
 downloadAs theme a =
     Element.downloadAs (theme.link ++ a)
 
 
-heading1 : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> List (Element msg) -> Element msg
+heading1 : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> List (Element msg) -> Element msg
 heading1 theme a =
     paragraph theme (regionHeading 1 :: theme.heading1 ++ a)
 
 
-heading2 : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> List (Element msg) -> Element msg
+heading2 : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> List (Element msg) -> Element msg
 heading2 theme a =
     paragraph theme (regionHeading 2 :: theme.heading2 ++ a)
 
 
-heading3 : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> List (Element msg) -> Element msg
+heading3 : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> List (Element msg) -> Element msg
 heading3 theme a =
     paragraph theme (regionHeading 3 :: theme.heading3 ++ a)
 
 
-heading4 : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> List (Element msg) -> Element msg
+heading4 : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> List (Element msg) -> Element msg
 heading4 theme a =
     paragraph theme (regionHeading 4 :: theme.heading4 ++ a)
 
 
-heading5 : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> List (Element msg) -> Element msg
+heading5 : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> List (Element msg) -> Element msg
 heading5 theme a =
     paragraph theme (regionHeading 5 :: theme.heading5 ++ a)
 
 
-heading6 : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> List (Element msg) -> Element msg
+heading6 : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> List (Element msg) -> Element msg
 heading6 theme a =
     paragraph theme (regionHeading 6 :: theme.heading6 ++ a)
 
 
-horizontalLine : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> Element msg
+horizontalLine : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> Element msg
 horizontalLine theme a =
     el (width fill :: theme.horizontalLineContainer)
         (el (width fill :: theme.horizontalLine ++ a) none)
 
 
-labelLeft : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> Element msg -> Element.Input.Label msg
+labelLeft : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> Element msg -> Element.Input.Label msg
 labelLeft theme a =
     Element.Input.labelLeft (theme.label ++ a)
 
 
-labelRight : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> Element msg -> Element.Input.Label msg
+labelRight : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> Element msg -> Element.Input.Label msg
 labelRight theme a =
     Element.Input.labelRight (theme.label ++ a)
 
 
-labelAbove : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> Element msg -> Element.Input.Label msg
+labelAbove : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> Element msg -> Element.Input.Label msg
 labelAbove theme a =
     Element.Input.labelAbove (theme.label ++ a)
 
 
-labelBelow : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> Element msg -> Element.Input.Label msg
+labelBelow : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> Element msg -> Element.Input.Label msg
 labelBelow theme a =
     Element.Input.labelBelow (theme.label ++ a)
 
@@ -124,67 +124,67 @@ labelHidden a =
     Element.Input.labelHidden a
 
 
-button : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { label : Element msg, onPress : Maybe msg } -> Element msg
+button : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { label : Element msg, onPress : Maybe msg } -> Element msg
 button theme a =
     Element.Input.button (theme.button ++ a)
 
 
-inputText : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { label : Element.Input.Label msg, placeholder : Maybe (Element.Input.Placeholder msg), text : String, onChange : String -> msg } -> Element msg
+inputText : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { label : Element.Input.Label msg, placeholder : Maybe (Element.Input.Placeholder msg), text : String, onChange : String -> msg } -> Element msg
 inputText theme a =
     Element.Input.text (theme.input ++ a)
 
 
-inputMultiline : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { label : Element.Input.Label msg, placeholder : Maybe (Element.Input.Placeholder msg), text : String, spellcheck : Bool, onChange : String -> msg } -> Element msg
+inputMultiline : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { label : Element.Input.Label msg, placeholder : Maybe (Element.Input.Placeholder msg), text : String, spellcheck : Bool, onChange : String -> msg } -> Element msg
 inputMultiline theme a =
     Element.Input.multiline (theme.input ++ a)
 
 
-inputSearch : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { label : Element.Input.Label msg, placeholder : Maybe (Element.Input.Placeholder msg), text : String, onChange : String -> msg } -> Element msg
+inputSearch : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { label : Element.Input.Label msg, placeholder : Maybe (Element.Input.Placeholder msg), text : String, onChange : String -> msg } -> Element msg
 inputSearch theme a =
     Element.Input.search (theme.input ++ a)
 
 
-inputEmail : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { label : Element.Input.Label msg, placeholder : Maybe (Element.Input.Placeholder msg), text : String, onChange : String -> msg } -> Element msg
+inputEmail : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { label : Element.Input.Label msg, placeholder : Maybe (Element.Input.Placeholder msg), text : String, onChange : String -> msg } -> Element msg
 inputEmail theme a =
     Element.Input.email (theme.input ++ a)
 
 
-inputNewPassword : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { label : Element.Input.Label msg, placeholder : Maybe (Element.Input.Placeholder msg), text : String, show : Bool, onChange : String -> msg } -> Element msg
+inputNewPassword : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { label : Element.Input.Label msg, placeholder : Maybe (Element.Input.Placeholder msg), text : String, show : Bool, onChange : String -> msg } -> Element msg
 inputNewPassword theme a =
     Element.Input.newPassword (theme.input ++ a)
 
 
-inputCurrentPassword : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { label : Element.Input.Label msg, placeholder : Maybe (Element.Input.Placeholder msg), text : String, show : Bool, onChange : String -> msg } -> Element msg
+inputCurrentPassword : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { label : Element.Input.Label msg, placeholder : Maybe (Element.Input.Placeholder msg), text : String, show : Bool, onChange : String -> msg } -> Element msg
 inputCurrentPassword theme a =
     Element.Input.currentPassword (theme.input ++ a)
 
 
-inputPlaceholder : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> Element msg -> Element.Input.Placeholder msg
+inputPlaceholder : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> Element msg -> Element.Input.Placeholder msg
 inputPlaceholder theme a =
     Element.Input.placeholder (theme.inputPlaceholder ++ a)
 
 
-inputOption : Element.PravdomilUi.Theme.Theme msg a -> b -> Element msg -> Element.Input.Option b msg
+inputOption : Element.PravdomilUi.Theme.Theme msg -> b -> Element msg -> Element.Input.Option b msg
 inputOption theme a label =
     Element.Input.optionWith a (inputRadioOption theme label)
 
 
-inputRadioOption : Element.PravdomilUi.Theme.Theme msg a -> Element msg -> Element.Input.OptionState -> Element msg
+inputRadioOption : Element.PravdomilUi.Theme.Theme msg -> Element msg -> Element.Input.OptionState -> Element msg
 inputRadioOption theme label state =
     row [ spacing 8, height fill ] [ el (theme.inputOption state) none, label ]
 
 
-blockQuote : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> List (Element msg) -> Element msg
+blockQuote : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> List (Element msg) -> Element msg
 blockQuote theme a =
     column (theme.blockQuote ++ a)
 
 
-codeSpan : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> Element msg -> Element msg
+codeSpan : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> Element msg -> Element msg
 codeSpan theme a =
     el (theme.codeSpan ++ a)
 
 
-codeBlock : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> List (Element msg) -> Element msg
+codeBlock : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> List (Element msg) -> Element msg
 codeBlock theme a =
     column (theme.codeBlock ++ a)
 
@@ -210,7 +210,7 @@ noneAttribute =
 
 {-| <https://github.com/mdgriffith/elm-ui/issues/291>
 -}
-form : Element.PravdomilUi.Theme.Theme msg a -> List (Attribute msg) -> { onSubmit : msg, body : Element msg } -> Element msg
+form : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> { onSubmit : msg, body : Element msg } -> Element msg
 form theme attrs a =
     el attrs
         (html

@@ -5,7 +5,7 @@ import Element.PravdomilUi exposing (..)
 import Element.PravdomilUi.Theme
 
 
-theme : Element.PravdomilUi.Theme.Style {} -> Element.PravdomilUi.Theme.Theme msg {}
+theme : Element.PravdomilUi.Theme.Style -> Element.PravdomilUi.Theme.Theme msg
 theme a =
     let
         focusShadow =
@@ -137,7 +137,7 @@ theme a =
 --
 
 
-style : Element.PravdomilUi.Theme.Style {}
+style : Element.PravdomilUi.Theme.Style
 style =
     { fore100 = rgb 0 0 0
     , fore90 = rgb 0.12 0.14 0.15
