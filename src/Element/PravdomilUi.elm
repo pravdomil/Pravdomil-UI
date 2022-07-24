@@ -171,7 +171,7 @@ inputOption theme a label =
 
 inputRadioOption : Element.PravdomilUi.Theme.Theme msg -> Element msg -> Element.Input.OptionState -> Element msg
 inputRadioOption theme label state =
-    row [ spacing 8, height fill ] [ el (theme.inputOption state) none, label ]
+    row [ spacing 8, height fill ] [ el (theme.inputRadioOption state) none, label ]
 
 
 blockQuote : Element.PravdomilUi.Theme.Theme msg -> List (Attribute msg) -> List (Element msg) -> Element msg

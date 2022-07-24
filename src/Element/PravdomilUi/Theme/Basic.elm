@@ -84,7 +84,7 @@ theme a =
         [ fontColor a.fore60
         , fontSize 14
         ]
-    , inputOption =
+    , inputRadioOption =
         \x ->
             [ width (px 16)
             , height (px 16)

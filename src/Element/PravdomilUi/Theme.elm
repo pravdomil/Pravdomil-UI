@@ -23,7 +23,7 @@ type alias Theme msg =
     , button : List (Element.Attribute msg)
     , input : List (Element.Attribute msg)
     , inputPlaceholder : List (Element.Attribute msg)
-    , inputOption : Element.Input.OptionState -> List (Element.Attribute msg)
+    , inputRadioOption : Element.Input.OptionState -> List (Element.Attribute msg)
     , blockQuote : List (Element.Attribute msg)
     , codeSpan : List (Element.Attribute msg)
     , codeBlock : List (Element.Attribute msg)
