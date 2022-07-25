@@ -208,7 +208,7 @@ textEllipsis attrs a =
     el
         (width fill
             :: clip
-            :: htmlAttribute (Html.Attributes.style "display" "inline-block")
+            :: htmlAttribute (Html.Attributes.style "display" "block")
             :: htmlAttribute (Html.Attributes.style "text-overflow" "ellipsis")
             :: htmlAttribute (Html.Attributes.style "white-space" "nowrap")
             :: htmlAttribute (Html.Attributes.style "line-height" "normal")
